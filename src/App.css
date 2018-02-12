@@ -8,14 +8,20 @@
 }
 
 .App-header {
-  background-color: #222;
+  /*background-color: #222;*/
+  /*background-image: url('./headerimage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;*/
   height: 150px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .App-intro {

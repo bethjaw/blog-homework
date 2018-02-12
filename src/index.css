@@ -1,5 +1,42 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-family: 'Raleway', sans-serif;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  border: 1px solid #7091A8;
+  border-radius: 3px;
+  width: 70px;
+  height: 25px;
+}
+
+.allBlogs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.sectionTitle {
+  text-transform: uppercase;
+}
+
+.blogsnippet {
+  text-align: left;
+}
+
+/*.line {
+  width: 100px;
+}*/
+
+.blogtitle {
+  color: #60B0EA;
+  /*border-bottom: 1px solid grey;
+  padding-bottom: 20px;*/
 }
