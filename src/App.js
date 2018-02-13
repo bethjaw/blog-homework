@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Link,
-//   Redirect,
-// } from 'react-router-dom'
+import React from 'react';
 import './App.css';
 import Main from './components/Main.js';
-// import Login from './components/Login.js';
+import AddBlog from './components/AddBlog'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      main: false,
-      login: true
+      main: true,
+      addbutton: true,
+      addblog: false,
     }
   }
 
-  handleLogin(){
+
+  handleClick = () => {
     this.setState({
-      main: true,
-      login: false,
+      main: false,
+      addbutton: false,
+      addblog: true,
     })
   }
 
@@ -31,16 +33,25 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src='./public/headerimage.jpg' /> */}
-          <h1 className="App-title">Welcome to the Blog</h1>
+          <h1 className="App-title">Internal Integration</h1>
+          <h4>a blog</h4>
         </header>
+        <Router>
+          <div>
+        <div className='btndiv'>
+          {/* {this.state.addbutton ? <button className='blogbutton' onClick={this.handleClick}>New Blog</button> : null} */}
+          <Link to="/"><button>Home</button></Link>
 
-        {/* {this.state.login ? <Login handlelogin={this.handleLogin.bind(this)}/> : null}
+          <Link to="/addnew"><button>New Blog</button></Link>
+        </div>
 
-        {this.state.main ? <Main /> : null} */}
+          {/* {this.state.main ? <Main /> : null} */}
+          {/* {this.state.addblog ? <AddBlog /> : null} */}
 
-        <Main />
-
+              <Route exact path="/" component={Main}/>
+              <Route path="/addnew" component={AddBlog}/>
+            </div>
+          </Router>
       </div>
     );
   }

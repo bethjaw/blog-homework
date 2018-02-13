@@ -19,13 +19,12 @@ export default class OtherBlog extends React.Component {
   render(){
     return(
       <div>
-        <h3 className='sectionTitle'>User Posts</h3>
         {this.state.otherblogs.map((blog) => {
           return (
-            <div className='blogsnippet' key={blog.id}>
+            <div className='blogsnippet2' key={blog.id}>
             <h3 className='blogtitle'>{blog.title}</h3>
-            <p>{blog.content}</p>
-            <button>Read</button>
+            <p className='blogintro'>{blog.content}</p>
+            <button onClick={this.props.seeSingle}>Read</button>
             </div>
           )
         })}

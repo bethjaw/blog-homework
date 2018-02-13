@@ -9,14 +9,40 @@ h3 {
   font-family: 'Roboto', sans-serif;
 }
 
+h4 {
+  color: grey;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  margin-left: 10px;
+  font-style: italic;
+}
+
 button {
   border: 1px solid #7091A8;
   border-radius: 3px;
   width: 70px;
   height: 25px;
+  color: #7091A8;
+}
+
+button:hover {
+  background-color: #7091A8;
+  color: #FFF;
+}
+
+button:focus {
+  background-color: #7091A8;
+  color: #FFF;
 }
 
 .allBlogs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sectionBlogs {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -29,14 +55,66 @@ button {
 
 .blogsnippet {
   text-align: left;
+  width: 150px;
+  margin: 10px 50px 10px 50px;
+  /*border: 1px dotted grey;*/
+  padding: 15px;
 }
 
-/*.line {
-  width: 100px;
-}*/
+.blogsnippet2 {
+  padding: 15px;
+}
 
 .blogtitle {
   color: #60B0EA;
-  /*border-bottom: 1px solid grey;
-  padding-bottom: 20px;*/
+}
+
+.blogintro {
+  color: grey;
+  font-size: 12px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.catBtn {
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: #2C506A;
+  color: #FFF;
+}
+
+/* ADD BLOG PAGE */
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forminput {
+  width: 600px;
+  height: 25px;
+  margin: 3px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.formtext {
+  width: 600px;
+  height: 200px;
+  margin: 3px;
+  font-size: 14px;
+}
+
+.submitBtn {
+  margin: 3px;
+
 }

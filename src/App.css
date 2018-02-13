@@ -8,24 +8,50 @@
 }
 
 .App-header {
-  /*background-color: #222;*/
-  /*background-image: url('./headerimage.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.5;*/
-  height: 150px;
-  padding: 20px;
+  height: 100px;
+  padding-top: 20px;
   color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .App-title {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #000;
   text-transform: uppercase;
 }
 
 .App-intro {
   font-size: large;
+}
+
+button {
+  margin: 5px;
+}
+
+.btndiv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 40px;
+}
+
+.blogbutton {
+  border: 1px solid #60B0EA;
+  border-radius: 3px;
+  width: 90px;
+  height: 30px;
+  background-color: #60B0EA;
+  color: #FFF;
+}
+
+.blogbutton:hover {
+  background-color: #7091A8;
+  color: #FFF;
+  border: 1px solid #7091A8;
 }
 
 @keyframes App-logo-spin {
