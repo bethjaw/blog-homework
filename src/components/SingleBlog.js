@@ -17,17 +17,22 @@ export default class SingleBlog extends React.Component {
 
 
   render(){
-    console.log('single', this.props.blog);
+    console.log('single', this.props);
     return(
-      <div>
-        <button onClick={this.props.home}>Home</button>
-        <p>single blog</p>
-        {/* {this.props.blog.single.map((blog) => {
-          <div> */}
+      <div className='singleblog'>
+        {/* <button onClick={this.props.home}>Home</button>
+        <p>single blog</p> */}
+
+          <div className='blogdiv'>
+            <div className='star'>
+              <i className="fa fa-star-o"></i>
+            </div>
             <h3 className='blogtitle'>{this.props.blog.title}</h3>
             <p className='blogintro'>{this.props.blog.content}</p>
-          {/* </div>
-        })} */}
+            <div className="read">
+              <button className='markread'>Mark Read</button><input type="checkbox"/>
+            </div>
+          </div>
       </div>
     )
   }

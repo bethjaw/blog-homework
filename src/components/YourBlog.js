@@ -14,7 +14,7 @@ export default class YourBlog extends React.Component {
 
     this.state={
       blogs: [],
-      singleblog: false,
+      // singleblog: false,
     }
   }
 
@@ -24,11 +24,11 @@ export default class YourBlog extends React.Component {
     this.setState({blogs: json})
   }
 
-  seeSingleBlog = () => {
-    this.setState({
-      singleblog: true,
-    })
-  }
+  // seeSingleBlog = () => {
+  //   <Link to="/singleblog"></Link>
+  //   this.props.history.push('/singleblog')
+  //
+  // }
 
   render(){
     console.log(this.state);
@@ -38,22 +38,25 @@ export default class YourBlog extends React.Component {
           <div>
             {this.state.blogs.map((blog) => {
               return (
-
-                <SingleBlog
-                  key={blog.id}
-                  blog={blog}
-                />
-
                 // <div className='blogsnippet2' key={blog.id}>
                 // <h3 className='blogtitle'>{blog.title}</h3>
                 // <p className='blogintro'>{blog.content}</p>
-                // <button onClick={this.seeSingleBlog} id={blog.id}>Read</button>
+                // <Link to="singleblog"><button id={blog.id}>Read</button></Link>
                 // </div>
+
+                <SingleBlog
+                  key={blog.id}
+                  blog={blog} />
               )
             })}
-            <Route path="/singleblog" component={SingleBlog}/>
+
+            {/* {this.state.singleblog ? <SingleBlog /> : null} */}
+
+            {/* <Route path="/singleblog" component={SingleBlog}/> */}
+            <Route exact path="/singleblog" render={ props => <SingleBlog {...props} />} />
           </div>
         </Router>
+
       </div>
     )
   }

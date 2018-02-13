@@ -12,7 +12,6 @@ import AllBlogs from './AllBlogs'
 
 export default class Categories extends React.Component {
 
-
   render(){
     return(
       <div>

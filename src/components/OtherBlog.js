@@ -1,4 +1,6 @@
 import React from 'react';
+import SingleBlog from './SingleBlog'
+
 
 export default class OtherBlog extends React.Component {
   constructor(props){
@@ -21,11 +23,14 @@ export default class OtherBlog extends React.Component {
       <div>
         {this.state.otherblogs.map((blog) => {
           return (
-            <div className='blogsnippet2' key={blog.id}>
-            <h3 className='blogtitle'>{blog.title}</h3>
-            <p className='blogintro'>{blog.content}</p>
-            <button onClick={this.props.seeSingle}>Read</button>
-            </div>
+            // <div className='blogdiv' key={blog.id}>
+            // <h3 className='blogtitle'>{blog.title}</h3>
+            // <p className='blogintro'>{blog.content}</p>
+            // <button onClick={this.props.seeSingle}>Read</button>
+            // </div>
+            <SingleBlog
+              key={blog.id}
+              blog={blog} />
           )
         })}
       </div>

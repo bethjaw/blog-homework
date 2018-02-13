@@ -21,17 +21,25 @@ export default class AllBlogs extends React.Component {
   render(){
     console.log(this.state);
     return (
-        <div className='allBlogs'>
+      // <div className='singleblog'>
+        <div className='allblogs'>
         {this.state.blogs.map((blog) => {
           return (
-            <div className='blogsnippet' key={blog.id}>
+            <div className='blogdiv' key={blog.id}>
+              <div className='star'>
+                <i className="fa fa-star-o"></i>
+              </div>
             <h3 className='blogtitle'>{blog.title}</h3>
             <p className='blogintro'>{blog.content}</p>
-            <button onClick={this.props.seeSingle} id={blog.id}>Read</button>
+            <div className="read">
+              <button className='markread'>Mark Read</button><input type="checkbox"/>
+            </div>
+            {/* <button onClick={this.props.seeSingle} id={blog.id}>Read</button> */}
             </div>
           )
         })}
         </div>
+      // </div>
     )
   }
 }

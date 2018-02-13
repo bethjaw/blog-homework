@@ -35,13 +35,6 @@ button:focus {
   color: #FFF;
 }
 
-.allBlogs {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-}
-
 .sectionBlogs {
   display: flex;
   flex-direction: row;
@@ -53,16 +46,22 @@ button:focus {
   text-transform: uppercase;
 }
 
-.blogsnippet {
-  text-align: left;
-  width: 150px;
-  margin: 10px 50px 10px 50px;
-  /*border: 1px dotted grey;*/
-  padding: 15px;
+.allblogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.blogsnippet2 {
-  padding: 15px;
+.blogdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted grey;
+  margin: 10px;
+  width: 750px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .blogtitle {
@@ -72,6 +71,7 @@ button:focus {
 .blogintro {
   color: grey;
   font-size: 12px;
+  width: 700px;
 }
 
 .categories {
@@ -90,12 +90,45 @@ button:focus {
   color: #FFF;
 }
 
+
+.markread {
+  width: 90px;
+}
+
+.read {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.star {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fa-star, .fa-star-o {
+  margin-top: 10px;
+  color: #A9D1ED;
+}
+
+
+.singleblog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ADD BLOG PAGE */
 
 .addForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .forminput {
