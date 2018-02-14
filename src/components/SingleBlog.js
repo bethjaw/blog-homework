@@ -34,8 +34,9 @@ export default class SingleBlog extends React.Component {
     console.log('single props', this.props.blog.read);
     // console.log('single state', this.state);
 
-    let isRead = 'star fa '
-    isRead += this.props.blog.read === true ? 'fa-star' : 'fa-star-o'
+    let isRead = 'fa '
+    isRead += this.props.blog.read === true ? 'fa-check' : ''
+    console.log(isRead);
 
     return(
       <div className='singleblog'>

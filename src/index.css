@@ -115,6 +115,11 @@ button:focus {
   color: #A9D1ED;
 }
 
+.fa-check {
+  margin-top: 10px;
+  color: #A9D1ED;
+}
+
 
 .singleblog {
   display: flex;
