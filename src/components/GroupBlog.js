@@ -23,11 +23,6 @@ export default class GroupBlog extends React.Component {
       <div>
         {this.state.groupblogs.map((blog) => {
           return (
-            // <div className='blogdiv' key={blog.id}>
-            // <h3 className='blogtitle'>{blog.title}</h3>
-            // <p className='blogintro'>{blog.content}</p>
-            // <button onClick={this.props.seeSingle}>Read</button>
-            // </div>
             <SingleBlog
               key={blog.id}
               blog={blog} />

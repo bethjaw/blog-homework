@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom'
 
 export default class AddBlog extends React.Component {
   constructor(props){
@@ -45,7 +41,6 @@ export default class AddBlog extends React.Component {
           <h3>Share Your Knowledge</h3>
           <input className='forminput' placeholder='Title...' onChange={this.handleChange} name='title' defaultValue=''/>
           <textarea className='formtext' placeholder='All the content...'  name='content' defaultValue=''></textarea>
-          {/* <input type='submit' value='post' className='submitBtn' /> */}
           <button className='submitBtn' type="submit">Post</button>
         </form>
         {this.state.message}
