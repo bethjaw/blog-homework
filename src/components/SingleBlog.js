@@ -1,8 +1,7 @@
 import React from 'react';
 import Glasses from '../eyeglasses.png'
-// import Header from '../headerimage.jpg'
-// import Glasses from './Glasses'
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'
+
 
 export default class SingleBlog extends React.Component {
   constructor(props){
@@ -24,8 +23,8 @@ export default class SingleBlog extends React.Component {
             <div className='star'>
               {this.props.blog.read ? <img src={Glasses} className='glasses'/> : null}
             </div>
-            <h3 className='blogtitle'>{this.props.blog.title}</h3>
-            <p className='blogintro'>{this.props.blog.content}</p>
+            <ReactMarkdown className='blogtitle' source={this.props.blog.title} allowTypes={['breaks']}/>
+            <ReactMarkdown className='blogintro' source={this.props.blog.content} allowTypes={['breaks']}/>
             <div className="read">
             <button className='markread' onClick={()=> this.props.markRead(this.props.blog)}>Mark Read</button>
             </div>

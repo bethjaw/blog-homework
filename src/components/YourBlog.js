@@ -48,9 +48,9 @@ export default class YourBlog extends React.Component {
               key={blog.id}
               blog={blog}
               markRead={this.markRead}
-              />
-            )
-          })}
+            />
+          )
+        })}
       </div>
     )
   }

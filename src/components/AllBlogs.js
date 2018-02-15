@@ -1,6 +1,6 @@
 import React from 'react';
 import SingleBlog from './SingleBlog'
-import Glasses from './Glasses'
+
 
 export default class AllBlogs extends React.Component {
   constructor(props){
@@ -53,7 +53,7 @@ export default class AllBlogs extends React.Component {
               key={blog.id}
               blog={blog}
               markRead={this.markRead}
-              />
+            />
           )
         })}
       </div>
