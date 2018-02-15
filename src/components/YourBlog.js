@@ -16,6 +16,28 @@ export default class YourBlog extends React.Component {
     this.setState({blogs: json})
   }
 
+  async updateBlog(post){
+    const response = await fetch('https://bloghomework.herokuapp.com/update', {
+      method: 'PATCH',
+      body: JSON.stringify(post),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.componentDidMount()
+  }
+
+  markRead = (blog) => {
+    let blogid = blog.id
+
+    const updateRead = {
+      "id": blogid,
+      "read": true
+    }
+    this.updateBlog(updateRead)
+  }
+
   render(){
     console.log(this.state);
     return(
@@ -25,6 +47,7 @@ export default class YourBlog extends React.Component {
             <SingleBlog
               key={blog.id}
               blog={blog}
+              markRead={this.markRead}
               />
             )
           })}

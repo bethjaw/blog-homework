@@ -110,14 +110,9 @@ button:focus {
   align-items: center;
 }
 
-.fa-star, .fa-star-o {
-  margin-top: 10px;
-  color: #A9D1ED;
-}
-
-.fa-check {
-  margin-top: 10px;
-  color: #A9D1ED;
+.glasses {
+  width: 40px;
+  height: 40px;
 }
 
 

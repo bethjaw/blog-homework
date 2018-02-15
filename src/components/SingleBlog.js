@@ -1,4 +1,7 @@
 import React from 'react';
+import Glasses from '../eyeglasses.png'
+// import Header from '../headerimage.jpg'
+// import Glasses from './Glasses'
 // import ReactMarkdown from 'react-markdown';
 
 export default class SingleBlog extends React.Component {
@@ -7,53 +10,27 @@ export default class SingleBlog extends React.Component {
 
     this.state = {
       blogid: this.props.blog.id,
+      blogread: this.props.blog.read
     }
   }
 
-  async updateBlog(post){
-    const response = await fetch('https://bloghomework.herokuapp.com/update', {
-      method: 'PATCH',
-      body: JSON.stringify(post),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }
-    })
-  }
-
-  markRead = () => {
-    // let blogid = e.target.id.value
-    const updateRead = {
-      "id": this.state.blogid,
-      "read": true
-    }
-    this.updateBlog(updateRead)
-  }
 
   render(){
-    console.log('single props', this.props.blog.read);
-    // console.log('single state', this.state);
-
-    let isRead = 'fa '
-    isRead += this.props.blog.read === true ? 'fa-check' : ''
-    console.log(isRead);
+    console.log('single props', this.props);
 
     return(
       <div className='singleblog'>
           <div className='blogdiv'>
             <div className='star'>
-              {/* <i className="fa fa-star-o"></i> */}
-              <i className={isRead}></i>
+              {this.props.blog.read ? <img src={Glasses} className='glasses'/> : null}
             </div>
             <h3 className='blogtitle'>{this.props.blog.title}</h3>
             <p className='blogintro'>{this.props.blog.content}</p>
             <div className="read">
-                <button className='markread' onClick={this.markRead}>Mark Read</button>
+            <button className='markread' onClick={()=> this.props.markRead(this.props.blog)}>Mark Read</button>
             </div>
           </div>
       </div>
     )
   }
-
-
 }
