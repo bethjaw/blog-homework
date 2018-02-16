@@ -9,7 +9,7 @@ h3 {
   font-family: 'Roboto', sans-serif;
 }
 
-h4 {
+.blog {
   color: grey;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
@@ -150,5 +150,30 @@ button:focus {
 
 .submitBtn {
   margin: 3px;
+}
 
+/* User Profile */
+
+.profilemain {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 1340px;
+}
+
+.profileblogs {
+  margin: 10px;
+}
+
+.profilegroups {
+  margin-left: 30px;
+  margin-top: 15px;
+  width: 250px;
+  height: 400px;
+}
+
+.groupname {
+  text-decoration: none;
+  color: #7091A8;
 }

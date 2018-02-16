@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleBlog from './SingleBlog'
+import UserGroups from './UserGroups'
 
 export default class YourBlog extends React.Component {
   constructor(props){
@@ -40,16 +41,22 @@ export default class YourBlog extends React.Component {
 
   render(){
     return(
-      <div>
-        {this.state.blogs.map((blog) => {
-          return (
-            <SingleBlog
-              key={blog.id}
-              blog={blog}
-              markRead={this.markRead}
-            />
-          )
-        })}
+      <div className='profilemain'>
+        <div className='profileblogs'>
+          <h4>Your Blogs</h4>
+          {this.state.blogs.map((blog) => {
+            return (
+              <SingleBlog
+                key={blog.id}
+                blog={blog}
+                markRead={this.markRead}
+              />
+            )
+          })}
+        </div>
+        <div className='profilegroups'>
+          <UserGroups />
+        </div>
       </div>
     )
   }
