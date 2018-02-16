@@ -39,7 +39,6 @@ export default class YourBlog extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div>
         {this.state.blogs.map((blog) => {
