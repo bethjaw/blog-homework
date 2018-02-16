@@ -12,22 +12,17 @@ import {
 class App extends React.Component {
   constructor(props){
     super(props)
+
     this.state = {
-      main: true,
-      addbutton: true,
-      addblog: false,
+      user: [],
     }
   }
 
-
-  handleClick = () => {
-    this.setState({
-      main: false,
-      addbutton: false,
-      addblog: true,
-    })
+  async componentDidMount(){
+    const response = await fetch('https://bloghomework.herokuapp.com/user/1')
+    const json = await response.json()
+    this.setState({user: json})
   }
-
 
   render() {
     return (
@@ -38,20 +33,18 @@ class App extends React.Component {
         </header>
         <Router>
           <div>
-        <div className='btndiv'>
-          {/* {this.state.addbutton ? <button className='blogbutton' onClick={this.handleClick}>New Blog</button> : null} */}
-          <Link to="/"><button>Home</button></Link>
-
-          <Link to="/addnew"><button>New Blog</button></Link>
-        </div>
-
-          {/* {this.state.main ? <Main /> : null} */}
-          {/* {this.state.addblog ? <AddBlog /> : null} */}
-
-              <Route exact path="/" component={Main}/>
-              <Route path="/addnew" component={AddBlog}/>
+            <div className='btndiv'>
+              <Link to="/"><button>Home</button></Link>
+              <Link to="/addnew"><button>New Blog</button></Link>
             </div>
-          </Router>
+              <Route exact path="/" component={Main}/>
+              {this.state.user.map((user) => {
+                return(
+                  <Route key={user.id} path="/addnew" component={() => <AddBlog state={user.id} />}/>
+                )
+              })}
+          </div>
+        </Router>
       </div>
     );
   }

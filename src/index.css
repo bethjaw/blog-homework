@@ -68,10 +68,11 @@ button:focus {
   color: #60B0EA;
 }
 
-.blogintro {
+.blogcontent {
   color: grey;
   font-size: 12px;
-  width: 700px;
+  width: 650px;
+  text-align: left;
 }
 
 .categories {

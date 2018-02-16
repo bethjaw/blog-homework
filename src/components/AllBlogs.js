@@ -41,14 +41,10 @@ export default class AllBlogs extends React.Component {
 
 
   render(){
-    // console.log('allblogs state', this.state.blogs);
-    // console.log('allblost', this.state.blogs.read);
-
     return (
       <div className='allblogs'>
         {this.state.blogs.map((blog) => {
           return (
-
             <SingleBlog
               key={blog.id}
               blog={blog}

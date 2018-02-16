@@ -7,6 +7,7 @@ export default class AddBlog extends React.Component {
     this.state={
       newblog: [],
       message: '',
+      user: this.props.state
     }
   }
 
@@ -26,6 +27,7 @@ export default class AddBlog extends React.Component {
     const newPost = {
       title: e.target.title.value,
       content: e.target.content.value,
+      user_id: this.state.user
     }
     this.createBlogPost(newPost)
     this.setState({
@@ -35,12 +37,13 @@ export default class AddBlog extends React.Component {
 
 
   render(){
+    console.log(this.props.state);
     return(
       <div >
         <form id='addBlogForm' className='addForm' onSubmit={this.handleAddBlog}>
           <h3>Share Your Knowledge</h3>
           <input className='forminput' placeholder='Title...' onChange={this.handleChange} name='title' defaultValue=''/>
-          <textarea className='formtext' placeholder='All the content...'  name='content' defaultValue=''></textarea>
+          <textarea className='formtext' placeholder='Share your knowledge in markdown'  name='content' defaultValue=''></textarea>
           <button className='submitBtn' type="submit">Post</button>
         </form>
         {this.state.message}

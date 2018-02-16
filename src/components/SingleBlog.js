@@ -13,10 +13,7 @@ export default class SingleBlog extends React.Component {
     }
   }
 
-
   render(){
-    console.log('single props', this.props);
-
     return(
       <div className='singleblog'>
           <div className='blogdiv'>
@@ -24,7 +21,7 @@ export default class SingleBlog extends React.Component {
               {this.props.blog.read ? <img src={Glasses} className='glasses'/> : null}
             </div>
             <ReactMarkdown className='blogtitle' source={this.props.blog.title} allowTypes={['breaks']}/>
-            <ReactMarkdown className='blogintro' source={this.props.blog.content} allowTypes={['breaks']}/>
+            <ReactMarkdown className='blogcontent' source={this.props.blog.content} allowTypes={['breaks']}/>
             <div className="read">
             <button className='markread' onClick={()=> this.props.markRead(this.props.blog)}>Mark Read</button>
             </div>
