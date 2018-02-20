@@ -12,13 +12,13 @@ export default class GroupBlog extends React.Component {
   }
 
   async componentDidMount(){
-    const response = await fetch('https://bloghomework.herokuapp.com/groupblog/1')
+    const response = await fetch('https://bloghomework.herokuapp.com/user/1/group')
     const json = await response.json()
     this.setState({groupblogs: json})
   }
 
   async updateBlog(post){
-    const response = await fetch('https://bloghomework.herokuapp.com/update', {
+    const response = await fetch('https://bloghomework.herokuapp.com/blog', {
       method: 'PATCH',
       body: JSON.stringify(post),
       headers: {

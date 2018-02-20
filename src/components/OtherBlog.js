@@ -12,13 +12,13 @@ export default class OtherBlog extends React.Component {
   }
 
   async componentDidMount(){
-    const response = await fetch('https://bloghomework.herokuapp.com/blogpost/2')
+    const response = await fetch('https://bloghomework.herokuapp.com/user/2/blogs')
     const json = await response.json()
     this.setState({otherblogs: json})
   }
 
   async updateBlog(post){
-    const response = await fetch('https://bloghomework.herokuapp.com/update', {
+    const response = await fetch('https://bloghomework.herokuapp.com/blog', {
       method: 'PATCH',
       body: JSON.stringify(post),
       headers: {

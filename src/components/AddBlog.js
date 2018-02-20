@@ -12,7 +12,7 @@ export default class AddBlog extends React.Component {
   }
 
   async createBlogPost(post){
-    const response = await fetch('https://bloghomework.herokuapp.com/newblog/1', {
+    const response = await fetch('https://bloghomework.herokuapp.com/user/1/blog', {
       method: 'POST',
       body: JSON.stringify(post),
       headers: {
