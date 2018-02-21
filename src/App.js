@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   async componentDidMount(){
-    const response = await fetch('https://bloghomework.herokuapp.com/user/1')
+    const response = await fetch('https://bloghomework.herokuapp.com/users/1')
     const json = await response.json()
     this.setState({user: json})
   }
