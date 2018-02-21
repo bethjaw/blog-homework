@@ -18,7 +18,7 @@ export default class AllBlogs extends React.Component {
   }
 
   async updateBlog(post){
-    const response = await fetch('https://bloghomework.herokuapp.com/blog', {
+    const response = await fetch('https://bloghomework.herokuapp.com/blogs', {
       method: 'PATCH',
       body: JSON.stringify(post),
       headers: {
